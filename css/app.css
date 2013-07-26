@@ -1,0 +1,29 @@
+/* Helpers */
+
+.hidden {
+  display: none
+}
+
+@media only screen and (max-width: 760px) {
+  body {
+    width: 100%;
+  }
+
+  #todoapp {
+    margin: 0;
+  }
+
+  #todoapp h1 {
+    top: 35px;
+    z-index: -1;
+  }
+
+  #new-todo {
+    padding: 16px 16px 16px 55px;
+  }
+
+  #footer {
+    position: fixed;
+    bottom: 0px;
+  }
+}

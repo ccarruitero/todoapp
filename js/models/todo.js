@@ -1,16 +1,26 @@
-(function( app ) {
-	'use strict';
+Todos.Todo = DS.Model.extend({
+  title: DS.attr('string'),
+  isCompleted: DS.attr('boolean'),
 
-	app.Todo = Ember.Object.extend({
-		id: null,
-		title: null,
-		completed: false,
-		// set store reference upon creation instead of creating static bindings
-		store: null,
-		// Observer that will react on item change and will update the storage
-		todoChanged: function() {
-			this.get( 'store' ).update( this );
-		}.observes( 'title', 'completed' )
-	});
+  todoDidChange: function () {
+    Ember.run.once(this, 'save');
+  }.observes('isCompleted', 'title')
+});
 
-})( window.Todos);
+Todos.Todo.FIXTURES = [
+  {
+    id: '1',
+    title: 'Learn Ember.js',
+    isCompleted: true
+  },
+  {
+    id: '2',
+    title: '...',
+    isCompleted: false
+  },
+  {
+    id: '3',
+    title: 'Profit!',
+    isCompleted: false
+  }
+];

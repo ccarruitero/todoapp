@@ -1,5 +1,7 @@
 Todos.Router.map(function(){
   this.resource('todos', {path: '/'}, function(){
+    this.route('settings');
+    this.route('filters');
     this.route('active');
     this.route('completed');
   });

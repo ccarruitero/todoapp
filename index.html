@@ -29,57 +29,63 @@
   </script>
 
   <script type="text/x-handlebars" data-template-name="todos">
-  <section id="todoapp">
-    <header id="header">
-      <h1>todos</h1>
-      {{view Ember.TextField id="new-todo" placeholder="What needs to be done?"
-             valueBinding="newTitle" action="createTodo"}}
-    </header>
+  <section class="wrapper">
+    <section id="todoapp">
+      <header id="header">
+        <h1>todos</h1>
+        {{view Ember.TextField id="new-todo" placeholder="What needs to be done?"
+               valueBinding="newTitle" action="createTodo"}}
+      </header>
 
-      <section id="main">
-      //TODO: move to outlet
-      <ul id="todo-list">
-      {{#each filteredTodos itemController="todo"}}
-        <li {{bind-attr class="isCompleted:completed isEditing:editing"}}>
-          {{#if isEditing}}
-            {{edit-todo class="edit" value=title text-cleared="removeTodo" focus-out="doneEditing" insert-newline="doneEditing"}}
-          {{else}}
-            {{input type="checkbox" checked=isCompleted class="toggle"}}
-            <label {{action "editTodo" on="doubleClick"}}>{{title}}</label>
-            <button {{action "removeTodo"}} class="destroy"></button>
-          {{/if}}
-        </li>
-      {{/each}}
-      </ul>
-
-        {{input type="checkbox" id="toggle-all" checked=allAreDone}}
-      </section>
-
-      <footer id="footer">
-        <span id="todo-count"><strong>{{remaining}}</strong> left</span>
-        <ul id="filters">
-          <li>
-            {{#link-to "todos.index" activeClass="selected"}}All{{/link-to}}
+        <section id="main">
+        <!--//TODO: move to outlet -->
+        <ul id="todo-list">
+        {{#each filteredTodos itemController="todo"}}
+          <li {{bind-attr class="isCompleted:completed isEditing:editing"}}>
+            {{#if isEditing}}
+              {{edit-todo class="edit" value=title text-cleared="removeTodo" focus-out="doneEditing" insert-newline="doneEditing"}}
+            {{else}}
+              {{input type="checkbox" checked=isCompleted class="toggle"}}
+              <label {{action "editTodo" on="doubleClick"}}>{{title}}</label>
+              <button {{action "removeTodo"}} class="destroy"></button>
+            {{/if}}
           </li>
-          <li>
-            {{#link-to "todos.active" activeClass="selected"}}Active{{/link-to}}
-          </li>
-          <li>
-            {{#link-to "todos.completed" activeClass="selected"}}Completed{{/link-to}}
-          </li>
+        {{/each}}
         </ul>
 
-        {{#if hasCompleted}}
-          <button id="clear-completed" {{action "clearCompleted"}} {{bind-attr class="buttonClass:hidden"}}>
-            Clear completed ({{completed}})
-          </button>
-        {{/if}}
-      </footer>
+          {{input type="checkbox" id="toggle-all" checked=allAreDone}}
+        </section>
+
+        <footer id="footer">
+          <span id="todo-count"><strong>{{remaining}}</strong> left</span>
+
+          {{#if hasCompleted}}
+            <button id="clear-completed" {{action "clearCompleted"}} {{bind-attr class="buttonClass:hidden"}}>
+              Clear completed ({{completed}})
+            </button>
+          {{/if}}
+        </footer>
+    </section>
+
+    <footer id="info">
+      <p>Double-click to edit a todo</p>
+    </footer>
   </section>
 
-  <footer id="info">
-    <p>Double-click to edit a todo</p>
-  </footer>
+  <section class="left-menu">
+    <ul id="filters">
+      <div class="nav-control"></div>
+      <li>
+        {{#link-to "todos.index" activeClass="selected"}}All{{/link-to}}
+      </li>
+      <li>
+        {{#link-to "todos.active" activeClass="selected"}}Active{{/link-to}}
+      </li>
+      <li>
+        {{#link-to "todos.completed" activeClass="selected"}}Completed{{/link-to}}
+      </li>
+    </ul>
+  </section>
   </script>
 
 	<script src="assets/jquery.min.js"></script>

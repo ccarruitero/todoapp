@@ -4,6 +4,48 @@
   display: none
 }
 
+.bg {
+  animation: showUp 1s;
+}
+
+#filters {
+  animation: slideIn 1s;
+}
+
+#filters li a:hover {
+  background: -moz-linear-gradient(center top , rgb(67, 166, 226) 0px, rgb(36, 122, 193) 100%) repeat scroll 0% 0% transparent;
+}
+
+.bg {
+  display: block;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background: rgba(0,0,0,0.5);
+  position: absolute;
+  top: 0;
+}
+
+@keyframes slideIn{
+  from {
+    margin-left: -120px;
+  }
+
+  to {
+    margin-left: -5px;
+  }
+}
+
+@keyframes showUp {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 0.5;
+  }
+}
+
 @media only screen and (max-width: 760px) {
   body {
     width: 100%;
@@ -33,7 +75,7 @@
   #filters {
     position: absolute;
     top: 0px;
-    z-index: 2;
+    z-index: 3;
     width: 120px;
     height: 500px;
     margin-left: -5px;
@@ -60,10 +102,6 @@
     position: fixed;
     bottom: 0px;
     z-index: 2;
-  }
-
-  .wrapper {
-    opacity: 0.2;
   }
 
   .left-menu {

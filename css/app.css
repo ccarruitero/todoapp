@@ -1,9 +1,3 @@
-/* Helpers */
-
-.hidden {
-  display: none
-}
-
 .bg {
   animation: showUp 1s;
 }
@@ -39,6 +33,40 @@
   background: rgba(0,0,0,0.5);
   position: absolute;
   top: 0;
+}
+
+input[type="checkbox"] {
+  margin: 0;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.checkbox{
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  width: 25px;
+  height: 25px;
+  background: none;
+  float: left;
+  margin: 15px 5px 5px;
+  border-radius: 8px;
+  border: dotted 3px rgba(0,0,0,0.7);
+}
+
+.checkbox input + span {
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  border-radius: 5px;
+  margin: 1.2px;
+  pointer-events: none;
+}
+
+.checkbox input:checked + span {
+  background: rgba(0,0,0,0.2);
 }
 
 @keyframes slideIn{

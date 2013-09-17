@@ -13,7 +13,7 @@
   <section class="wrapper">
     <section id="todoapp">
       <header id="header">
-        <h1>todos</h1>
+        <h1>Todo App</h1>
         {{view Ember.TextField id="new-todo" placeholder="What needs to do?"
                valueBinding="newTitle" action="createTodo"}}
       </header>
@@ -26,15 +26,20 @@
             {{#if isEditing}}
               {{edit-todo class="edit" value=title text-cleared="removeTodo" focus-out="doneEditing" insert-newline="doneEditing"}}
             {{else}}
-              {{input type="checkbox" checked=isCompleted class="toggle"}}
-              <label {{action "editTodo" on="doubleClick"}}>{{title}}</label>
+              <label class="checkbox">
+                {{input type="checkbox" checked=isCompleted class="toggle"}}
+                <span></span>
+              </label>
+              <label class="todo" {{action "editTodo" on="doubleClick"}}>{{title}}</label>
               <button {{action "removeTodo"}} class="destroy"></button>
             {{/if}}
           </li>
         {{/each}}
         </ul>
-
-          {{input type="checkbox" id="toggle-all" checked=allAreDone}}
+          <label id="toggle-all">
+            {{input type="checkbox" checked=allAreDone}}
+            <span></span>
+          </label>
         </section>
 
         <footer id="footer">

@@ -43,11 +43,11 @@
         </section>
 
         <footer id="footer">
-          {{#link-to 'todos.filters'}}filters{{/link-to}}
+          {{#link-to 'todos.filters' class="bottom" tag="button"}}filters{{/link-to}}
           <span id="todo-count"><strong>{{remaining}}</strong> left</span>
 
           {{#if hasCompleted}}
-            <button id="clear-completed" {{action "clearCompleted"}} {{bind-attr class="buttonClass:hidden"}}>
+            <button class="bottom" {{action "clearCompleted"}} {{bind-attr class="buttonClass:hidden"}}>
               Clear completed ({{completed}})
             </button>
           {{/if}}

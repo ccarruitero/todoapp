@@ -94,6 +94,12 @@ input[type="checkbox"] {
     width: 100%;
   }
 
+  .wrapper {
+    height: 420px;
+    overflow: scroll;
+    position: fixed;
+  }
+
   #todoapp {
     margin: 0;
   }

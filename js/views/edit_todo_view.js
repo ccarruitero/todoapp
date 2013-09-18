@@ -1,14 +1,13 @@
 Todos.EditTodoView = Ember.TextField.extend({
-  classNames: ['edit'],
-  insertNewline: function () {
-    this.get('controller').acceptChanges();
-  },
-
-  focusOut: function () {
-    this.get('controller').acceptChanges();
+  change: function () {
+    if (Ember.isEmpty(this.get('value'))) {
+      this.sendAction('text-cleared');
+    }
   },
 
   didInsertElement: function () {
     this.$().focus();
   }
 });
+
+Ember.Handlebars.helper('edit-todo', Todos.EditTodoView);

@@ -1,0 +1,18 @@
+<section class="bg">
+</section>
+<section class="left-menu">
+  <ul id="filters">
+    <div class="nav-control">
+      {{#link-to 'todos.index' class="back"}}{{/link-to}}
+    </div>
+    <li>
+      {{#link-to "todos.index" activeClass="selected"}}All{{/link-to}}
+    </li>
+    <li>
+      {{#link-to "todos.active" activeClass="selected"}}Active{{/link-to}}
+    </li>
+    <li>
+      {{#link-to "todos.completed" activeClass="selected"}}Completed{{/link-to}}
+    </li>
+  </ul>
+</section>

@@ -1,0 +1,43 @@
+{
+  "name": "todoapp",
+  "description": "another simple todo app",
+  "version": "0.1.0",
+  "homepage": "https://github.com/ccarruitero/todoapp",
+  "author": {
+    "name": "Cesar Carruitero",
+    "email": "cesar@mozilla.pe"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ccarruitero/todoapp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ccarruitero/todoapp/issues"
+  },
+  "licenses": [
+    {
+      "type": "MPL",
+      "url": "https://github.com/ccarruitero/todoapp/blob/master/LICENSE"
+    }
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt-contrib-jshint": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-contrib-qunit": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-dom-munger": "*",
+    "grunt-ember-templates": "*",
+    "grunt-zip": "*",
+    "grunt": "*"
+  }
+}

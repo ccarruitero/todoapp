@@ -1,7 +1,8 @@
 {
   "name": "Todo App",
   "description": "Todo App for Firefox OS",
-  "launch_path": "/index.html",  
+  "launch_path": "/index.html",
+  "version": "1.0.1",
   "developer": {
     "name": "Cesar Carruitero",
     "url": "https://github.com/ccarruitero/todoapp"

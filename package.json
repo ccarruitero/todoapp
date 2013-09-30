@@ -35,6 +35,7 @@
     "grunt-contrib-qunit": "*",
     "grunt-contrib-cssmin": "*",
     "grunt-contrib-copy": "*",
+    "grunt-contrib-concat": "*",
     "grunt-dom-munger": "*",
     "grunt-ember-templates": "*",
     "grunt-zip": "*",
